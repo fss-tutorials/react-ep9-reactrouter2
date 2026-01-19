@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, NavLink } from "react-router";
+import { useParams} from "react-router";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -30,25 +30,30 @@ const ProductDetails = () => {
     );
   }
 
-  if (!product) return <div className="text-center mt-20 font-bold">Product not found</div>;
+  if (!product)
+    return <div className="text-center mt-20 font-bold">Product not found</div>;
 
   return (
     <div className="min-h-screen bg-white">
+      {/* ---BREADCRUMB SECTION --- */}
+      <nav className="max-w-6xl mx-auto px-6 md:px-12 pt-8 flex items-center justify-between">
+        <div className="flex items-center gap-2 text-sm text-gray-500"></div>
+      </nav>
 
+      {/* --- PRODUCT CONTENT --- */}
       <div className="max-w-6xl mx-auto p-6 md:p-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          
-          {/* Left: Image Gallery Style */}
+          {/* Left: Image */}
           <div className="space-y-6">
-            <div className="aspect-4/5 bg-gray-50 rounded-[2.5rem] overflow-hidden shadow-inner border border-gray-100">
-              <img 
-                src={product.thumbnail} 
-                alt={product.title} 
+            <div className="aspect-[4/5] bg-gray-50 rounded-[2.5rem] overflow-hidden shadow-inner border border-gray-100">
+              <img
+                src={product.thumbnail}
+                alt={product.title}
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
             </div>
           </div>
-    
+
           {/* Right: Product Info */}
           <div className="flex flex-col pt-4">
             <div className="mb-2">
@@ -58,22 +63,23 @@ const ProductDetails = () => {
             </div>
 
             <div className="mb-8">
-              <h1 className="text-5xl md:text-6xl font-black text-gray-900 tracking-tight mb-4">
+              <h1 className="text-5xl md:text-6xl font-black text-gray-900 tracking-tight mb-4 leading-tight">
                 {product.title}
               </h1>
-              <div className="flex items-center gap-4">
-                <p className="text-3xl font-medium text-gray-900">${product.price}</p>
-              </div>
+              <p className="text-3xl font-medium text-gray-900">
+                ${product.price}
+              </p>
             </div>
 
-            <div className="border-t border-gray-100 py-8 mb-4">
-              <h3 className="text-xs font-black text-gray-400 uppercase tracking-widest mb-4">Description</h3>
+            <div className="border-t border-gray-100 py-8">
+              <h3 className="text-xs font-black text-gray-400 uppercase tracking-widest mb-4">
+                Description
+              </h3>
               <p className="text-gray-600 text-lg leading-relaxed">
                 {product.description}
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </div>

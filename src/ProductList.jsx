@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink, useSearchParams } from "react-router";
+import { NavLink } from "react-router";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
