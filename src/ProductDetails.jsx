@@ -35,9 +35,12 @@ const ProductDetails = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* ---BREADCRUMB SECTION --- */}
       <nav className="max-w-6xl mx-auto px-6 md:px-12 pt-8 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-sm text-gray-500"></div>
+        <div className="flex items-center gap-2 text-sm text-gray-500">
+
+          {/* Breadcrumb logic here */}
+          
+        </div>
       </nav>
 
       {/* --- PRODUCT CONTENT --- */}
@@ -45,7 +48,7 @@ const ProductDetails = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left: Image */}
           <div className="space-y-6">
-            <div className="aspect-[4/5] bg-gray-50 rounded-[2.5rem] overflow-hidden shadow-inner border border-gray-100">
+            <div className="aspect-4/5 bg-gray-50 rounded-[2.5rem] overflow-hidden shadow-inner border border-gray-100">
               <img
                 src={product.thumbnail}
                 alt={product.title}
